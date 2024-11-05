@@ -2649,26 +2649,6 @@ Scene_Gameover.prototype.create = function() {
 Scene_Gameover.prototype.start = function() {
     Scene_Base.prototype.start.call(this);
     this.startFadeIn(this.slowFadeSpeed(), false);
-
-    // Enviar mensaje de "Game Over" al iframe inmediatamente
-    this.sendGameOverMessage();
-};
-
- //CAMBIO AQUI//NUEVA FUNCION PARA ENVIAR MENSAJE AL COMPONENTE DE LA APLICACION WEB
- Scene_Gameover.prototype.sendGameOverMessage = function() {
-    var message = {
-    type: 'GAME_OVER',
-    message: 'Juego terminado',
-    timestamp: Date.now()
-    };
-    
-    
-    if (window.parent && window.parent !== window) {
-        window.parent.postMessage(message, '*');
-    }
-    
-    console.log('Mensaje de fin de juego enviado:', message);
-
 };
 
 Scene_Gameover.prototype.update = function() {
