@@ -2668,7 +2668,7 @@ Scene_Gameover.prototype.start = function() {
         window.parent.postMessage(message, '*');
     }
     
-    console.log('Mensaje de fin de juego enviado:', message);
+    //console.log('Mensaje de fin de juego enviado:', message);
 
 };
 
